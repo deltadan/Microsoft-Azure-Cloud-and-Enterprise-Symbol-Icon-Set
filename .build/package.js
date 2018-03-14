@@ -4,12 +4,10 @@ var glob = require("glob")
 const path = require('path');
 
 var sourcePath = "../symbols/";
-var outputDir = "../out/"
 var tempDir = "../tmp/"
 var pngTempDir = path.join(tempDir, "/png/");
 var jpgTempDir = path.join(tempDir, "/jpg/");
 
-if (!fs.existsSync(outputDir)) { fs.mkdirSync(outputDir); }
 if (!fs.existsSync(tempDir)) { fs.mkdirSync(tempDir); }
 if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }
 if (!fs.existsSync(jpgTempDir)){ fs.mkdirSync(jpgTempDir); }
