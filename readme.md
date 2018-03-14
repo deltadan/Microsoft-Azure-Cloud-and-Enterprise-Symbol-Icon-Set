@@ -1,4 +1,6 @@
-# Microsoft Azure Cloud &Enterprise Symbol Set
+[![CircleCI](https://circleci.com/gh/seesharprun/Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set/tree/master.svg?style=svg)](https://circleci.com/gh/seesharprun/Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set/tree/master)
+
+# Microsoft Azure Cloud & Enterprise Symbol Set
 
 This package contains a set of symbols/icons to visually represent features of and systems that use Microsoft Azure and related cloud and on-premises technologies. 
 
