@@ -12,8 +12,7 @@ if (!fs.existsSync(tempDir)) { fs.mkdirSync(tempDir); }
 if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }
 if (!fs.existsSync(jpgTempDir)){ fs.mkdirSync(jpgTempDir); }
 
-glob("**/*.svg", { cwd: symDir, nocase: true }, (error, filePaths) => {
-    console.dir(filePaths);
+glob("**/*.svg", (error, filePaths) => {
     var conversionData = [];
     filePaths.forEach(filePath => {
         var folderName = path.dirname(filePath);
@@ -37,5 +36,5 @@ glob("**/*.svg", { cwd: symDir, nocase: true }, (error, filePaths) => {
         });
     });
     console.dir(conversionData, { depth: 5, colors: true });
-    //svgexport.render(conversionData, () => {});
+    svgexport.render(conversionData, () => {});
 });
