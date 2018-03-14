@@ -38,5 +38,5 @@ jobs:
           name: Compress JPG Output Files
           command: zip -r cloud_and_enterprise_symbols-jpg *
       - store_artifacts:
-          path: ~/source/tmp/png/Symbols/cloud_and_enterprise_symbols-jpg.zip
+          path: ~/source/tmp/jpg/Symbols/cloud_and_enterprise_symbols-jpg.zip
           destination: cloud_and_enterprise_symbols-jpg.zip
