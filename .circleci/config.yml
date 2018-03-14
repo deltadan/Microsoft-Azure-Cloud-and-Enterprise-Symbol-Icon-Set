@@ -20,4 +20,4 @@ jobs:
           name: Build Lab Content
           command: node .build/package.js
       - store_artifacts:
-          path: ~/source/tmp/png/symbols
+          path: ~/source/tmp/png/Symbols
