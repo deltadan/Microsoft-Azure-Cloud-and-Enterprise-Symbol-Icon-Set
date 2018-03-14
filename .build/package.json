@@ -1,0 +1,9 @@
+{
+  "name": "imagepackagebuild",
+  "version": "1.0.0",
+  "main": "package.js",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "svgexport": "^0.3.2"
+  }
+}
