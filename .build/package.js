@@ -11,7 +11,7 @@ if (!fs.existsSync(tempDir)) { fs.mkdirSync(tempDir); }
 if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }
 if (!fs.existsSync(jpgTempDir)){ fs.mkdirSync(jpgTempDir); }
 
-glob("/symbols/**/*.svg", { nocase : true }, (error, filePaths) => {
+glob("symbols/**/*.svg", { nocase : true }, (error, filePaths) => {
     var conversionData = [];
     filePaths.forEach(filePath => {
         var folderName = path.dirname(filePath);
