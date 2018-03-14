@@ -3,10 +3,10 @@ var fs = require('fs');
 var glob = require("glob")
 const path = require('path');
 
-var sourcePath = "../symbols/";
-var tempDir = "../tmp/"
-var pngTempDir = path.join(tempDir, "/png/");
-var jpgTempDir = path.join(tempDir, "/jpg/");
+var sourcePath = "symbols";
+var tempDir = "tmp"
+var pngTempDir = path.join(tempDir, "png");
+var jpgTempDir = path.join(tempDir, "jpg");
 
 if (!fs.existsSync(tempDir)) { fs.mkdirSync(tempDir); }
 if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }

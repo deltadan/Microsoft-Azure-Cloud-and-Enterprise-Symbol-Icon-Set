@@ -16,9 +16,9 @@ jobs:
           paths:
             - ~/source/.build/node_modules
       - run:
-          working_directory: ~/source/.build
+          working_directory: ~/source/
           name: Build Lab Content
-          command: node package.js
+          command: node .build/package.js
       - run:
           working_directory: ~/source/tmp/png
           name: Compress PNG Output
