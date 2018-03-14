@@ -20,9 +20,23 @@ jobs:
           name: Build Lab Content
           command: node .build/package.js
       - run:
+          working_directory: ~/source/Symbols
+          name: Compress SVG Files
+          command: zip -r cloud_and_enterprise_symbols-svg *
+      - store_artifacts:
+          path: ~/source/Symbols/cloud_and_enterprise_symbols-svg.zip
+          destination: cloud_and_enterprise_symbols-svg.zip
+      - run:
           working_directory: ~/source/tmp/png/Symbols
-          name: Compress PNG Output
+          name: Compress PNG Output Files
           command: zip -r cloud_and_enterprise_symbols-png *
       - store_artifacts:
           path: ~/source/tmp/png/Symbols/cloud_and_enterprise_symbols-png.zip
           destination: cloud_and_enterprise_symbols-png.zip
+      - run:
+          working_directory: ~/source/tmp/jpg/Symbols
+          name: Compress JPG Output Files
+          command: zip -r cloud_and_enterprise_symbols-jpg *
+      - store_artifacts:
+          path: ~/source/tmp/png/Symbols/cloud_and_enterprise_symbols-jpg.zip
+          destination: cloud_and_enterprise_symbols-jpg.zip
