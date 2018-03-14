@@ -13,6 +13,7 @@ if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }
 if (!fs.existsSync(jpgTempDir)){ fs.mkdirSync(jpgTempDir); }
 
 glob("**/*.svg", { cwd: symDir }, (error, filePaths) => {
+    console.dir(filePaths);
     var conversionData = [];
     filePaths.forEach(filePath => {
         var folderName = path.dirname(filePath);
