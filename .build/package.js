@@ -3,6 +3,7 @@ var fs = require('fs');
 var glob = require("glob")
 const path = require('path');
 
+var symDir = "symbols";
 var tempDir = "tmp"
 var pngTempDir = path.join(tempDir, "png");
 var jpgTempDir = path.join(tempDir, "jpg");
@@ -11,14 +12,14 @@ if (!fs.existsSync(tempDir)) { fs.mkdirSync(tempDir); }
 if (!fs.existsSync(pngTempDir)) { fs.mkdirSync(pngTempDir); }
 if (!fs.existsSync(jpgTempDir)){ fs.mkdirSync(jpgTempDir); }
 
-glob("symbols/**/*.svg", { nocase : true, root: "symbols/" }, (error, filePaths) => {
+glob("**/*.svg", { cwd: symDir }, (error, filePaths) => {
     var conversionData = [];
     filePaths.forEach(filePath => {
         var folderName = path.dirname(filePath);
         var fileName = path.basename(filePath, '.svg');
         conversionData.push({
             "input": [
-                filePath
+                path.join(symDir, filePath)
             ],
             "output": [
                 [
