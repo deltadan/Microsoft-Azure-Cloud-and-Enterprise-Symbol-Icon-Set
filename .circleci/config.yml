@@ -22,7 +22,7 @@ jobs:
       - run:
           working_directory: ~/source/tmp/png
           name: Compress PNG Output
-          command: zip -r cloud_and_enterprise_symbols-png *
+          command: zip -r test *
       - store_artifacts:
-          path: ~/source/tmp/png/cloud_and_enterprise_symbols-png.zip
-          destination: cloud_and_enterprise_symbols-png.zip
+          path: ~/source/tmp/png/test.zip
+          destination: test.zip
