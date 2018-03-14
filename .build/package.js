@@ -3,7 +3,6 @@ var fs = require('fs');
 var glob = require("glob")
 const path = require('path');
 
-var symDir = "symbols";
 var tempDir = "tmp"
 var pngTempDir = path.join(tempDir, "png");
 var jpgTempDir = path.join(tempDir, "jpg");
@@ -19,7 +18,7 @@ glob("**/*.svg", (error, filePaths) => {
         var fileName = path.basename(filePath, '.svg');
         conversionData.push({
             "input": [
-                path.join(symDir, filePath)
+                filePath
             ],
             "output": [
                 [
