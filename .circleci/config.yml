@@ -19,10 +19,3 @@ jobs:
           working_directory: ~/source/
           name: Build Lab Content
           command: node .build/package.js
-      - run:
-          working_directory: ~/source/tmp/png
-          name: Compress PNG Output
-          command: zip -r test *
-      - store_artifacts:
-          path: ~/source/tmp/png/test.zip
-          destination: test.zip
