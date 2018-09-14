@@ -2,6 +2,7 @@
     {
         "name": "TRANSPARENT",
         "archiveFile": "cloud_and_enterprise_symbols.zip",
+        "convert": true,
         "extension": ".png",
         "categories": [
             {
@@ -38,8 +39,39 @@
         ]
     },
     {
+        "name": "VECTOR",
+        "archiveFile": "cloud_and_enterprise_symbols-vector.zip",
+        "convert": false,
+        "extension": ".svg",
+        "categories": [
+            {
+                "name": "Enterprise",
+                "styles": [
+                    {
+                        "name": "Monochrome",
+                        "options": []
+                    }
+                ]
+            },
+            {
+                "name": "Cloud",
+                "styles": [
+                    {
+                        "name": "Color",
+                        "options": []
+                    },
+                    {
+                        "name": "Monochrome",
+                        "options": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "MONOCHROME",
         "archiveFile": "cloud_and_enterprise_symbols-monochrome.zip",
+        "convert": true,
         "extension": ".png",
         "categories": [
             {
@@ -50,7 +82,7 @@
                         "options": [
                             "5x",
                             "65%",
-                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(0, 0, 0, 1); }"
+                            "svg { background: rgba(255, 255, 255, 0); } path { fill: rgba(0, 0, 0, 1); }"
                         ]
                     }
                 ]
@@ -62,7 +94,7 @@
                         "name": "Monochrome",
                         "options": [
                             "5x",
-                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(0, 0, 0, 1); }"
+                            "svg { background: rgba(255, 255, 255, 0); } path { fill: rgba(0, 0, 0, 1); }"
                         ]
                     }
                 ]
@@ -72,6 +104,7 @@
     {
         "name": "LARGE",
         "archiveFile": "cloud_and_enterprise_symbols-large.zip",
+        "convert": true,
         "extension": ".jpg",
         "categories": [
             {

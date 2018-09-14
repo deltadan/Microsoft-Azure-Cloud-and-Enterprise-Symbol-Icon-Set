@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var svgexport = require('svgexport');
-var fs = require('fs');
+var fs = require('fs-extra');
 var archiver = require('archiver');
 var glob = require("glob")
 const path = require('path');
@@ -20,7 +20,7 @@ gulp.task('default', function() {
         var promises = [];
         format.categories.forEach(category => {
             category.styles.forEach(style => {
-                var promise = generateImages(category.name, style.name, format.name, format.extension, style.options)
+                var promise = generateImages(category.name, style.name, format.name, format.extension, format.convert, style.options)
                 promises.push(promise);
             })
         });
@@ -29,24 +29,33 @@ gulp.task('default', function() {
         });        
     });
 });
-function generateImages(imageCategory, imageStyle, folderName, fileExtension, extraOptions) {
+function generateImages(imageCategory, imageStyle, folderName, fileExtension, convert, extraOptions) {
     var directory = path.join(symbolsDir, imageStyle, imageCategory);
     var filePaths = glob.sync("**/*.svg", { cwd: directory });
     var conversionData = [];
     filePaths.forEach(filePath => {
         var fileName = path.basename(filePath, '.svg');
-        var dataParameters = {
-            "input": [
-                path.join(directory, filePath)
-            ],
-            "output": []
-        };
-        var fileSuffix = imageStyle == "Color" ? "-color" : "";
-        var options = [
-            path.join(imageGenDir, folderName, imageCategory, fileName + fileSuffix + fileExtension)
-        ];
-        dataParameters.output.push(options.concat(extraOptions));
-        conversionData.push(dataParameters);
+        var sourceFile = path.join(directory, filePath);
+        var nameSuffix = imageStyle == "Color" ? "-color" : "";
+        var destFile = path.join(imageGenDir, folderName, imageCategory, fileName + nameSuffix + fileExtension);
+        console.dir(destFile);
+        console.dir(sourceFile);
+        if (convert) {
+            var dataParameters = {
+                "input": [
+                    sourceFile
+                ],
+                "output": []
+            };
+            var options = [
+                destFile
+            ];
+            dataParameters.output.push(options.concat(extraOptions));
+            conversionData.push(dataParameters);
+        }
+        else {
+            fs.copySync(sourceFile, destFile);
+        }
     });
     console.dir(conversionData, { depth: 5, colors: true });
     return new Promise((resolve, reject) => {
