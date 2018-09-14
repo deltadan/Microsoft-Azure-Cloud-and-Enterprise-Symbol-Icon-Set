@@ -1,16 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 pool:
   vmImage: 'Ubuntu 16.04'
-
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: npm install
+  workingDirectory: ~/source/.build
+  displayName: 'Install NPM Packages'
+- script: node .build/package.js
+  workingDirectory: ~/source/
+  displayName: 'Build Lab Content'
+- script: zip -r cloud_and_enterprise_symbols-svg *
+  workingDirectory: ~/source/Symbols
+  displayName: 'Compress SVG Files'
+- script: zip -r cloud_and_enterprise_symbols-png *
+  workingDirectory: ~/source/tmp/png/Symbols
+  displayName: 'Compress PNG Output Files'
+- script: zip -r cloud_and_enterprise_symbols-jpg *
+  workingDirectory: ~/source/tmp/jpg/Symbols
+  displayName: 'Compress JPG Output Files'
