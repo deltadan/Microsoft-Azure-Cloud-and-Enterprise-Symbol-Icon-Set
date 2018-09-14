@@ -1,0 +1,113 @@
+[
+    {
+        "name": "TRANSPARENT",
+        "compressedFolderName": "cloud_and_enterprise_symbols.zip",
+        "extension": ".png",
+        "categories": [
+            {
+                "name": "Enterprise",
+                "styles": [
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "5x",
+                            "svg { background: rgba(255, 255, 255, 0); } path { fill: rgba(42, 50, 130, 1); }"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cloud",
+                "styles": [
+                    {
+                        "name": "Color",
+                        "options": [
+                            "5x",
+                            "svg { background: rgba(255, 255, 255, 0); }"
+                        ]
+                    },
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "5x",
+                            "svg { background: rgba(255, 255, 255, 0); } path { fill: rgba(0, 120, 215, 1); }"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MONOCHROME",
+        "compressedFolderName": "cloud_and_enterprise_symbols-monochrome.zip",
+        "extension": ".png",
+        "categories": [
+            {
+                "name": "Enterprise",
+                "styles": [
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "5x",
+                            "65%",
+                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(0, 0, 0, 1); }"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cloud",
+                "styles": [
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "5x",
+                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(0, 0, 0, 1); }"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LARGE",
+        "compressedFolderName": "cloud_and_enterprise_symbols-large.zip",
+        "extension": ".jpg",
+        "categories": [
+            {
+                "name": "Enterprise",
+                "styles": [
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "10x",
+                            "65%",
+                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(42, 50, 130, 1); }"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cloud",
+                "styles": [
+                    {
+                        "name": "Color",
+                        "options": [
+                            "10x",
+                            "65%",
+                            "svg { background: rgba(255, 255, 255, 1); }"
+                        ]
+                    },
+                    {
+                        "name": "Monochrome",
+                        "options": [
+                            "10x",
+                            "65%",
+                            "svg { background: rgba(255, 255, 255, 1); } path { fill: rgba(0, 120, 215, 1); }"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

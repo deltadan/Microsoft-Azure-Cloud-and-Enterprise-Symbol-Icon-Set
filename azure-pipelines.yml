@@ -6,15 +6,5 @@ steps:
     command: install
     workingDir: $(Build.SourcesDirectory)/.build
     verbose: true
-- script: node .build/package.js
-  workingDirectory: $(Build.SourcesDirectory)
-  displayName: 'Build Lab Content'
-- script: zip -r cloud_and_enterprise_symbols-svg *
-  workingDirectory: $(Build.SourcesDirectory)/Symbols
-  displayName: 'Compress SVG Files'
-- script: zip -r cloud_and_enterprise_symbols-png *
-  workingDirectory: $(Build.SourcesDirectory)/tmp/png/Symbols
-  displayName: 'Compress PNG Output Files'
-- script: zip -r cloud_and_enterprise_symbols-jpg *
-  workingDirectory: $(Build.SourcesDirectory)/tmp/jpg/Symbols
-  displayName: 'Compress JPG Output Files'
+- task: gulp@0
+  inputs:

@@ -8,12 +8,9 @@ This package contains a set of symbols/icons to visually represent features of a
 
 | Property | Value |
 | --- | --- |
-| SVG Version | 1.1 |
 | Vector Image Size | 50x50 |
 | Vector Image Padding | 25x25 |
 | ViewBox Size | 0 0 100 100 |
-| Cloud Image Monochrome Color | #0078d7 |
-| Enterprise Image Monochrome Color | #2a3282 |
 
 ## Process
 
