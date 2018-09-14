@@ -1,9 +1,11 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 steps:
-- script: npm install
-  workingDirectory: $(Build.SourcesDirectory)/.build
-  displayName: 'Install NPM Packages'
+- task: Npm@1
+  inputs:
+    command: install
+    workingDir: $(Build.SourcesDirectory)/.build
+    verbose: true
 - script: node .build/package.js
   workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Build Lab Content'
