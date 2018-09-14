@@ -2,17 +2,17 @@ pool:
   vmImage: 'Ubuntu 16.04'
 steps:
 - script: npm install
-  workingDirectory: ~/source/.build
+  workingDirectory: $(Build.SourcesDirectory)/.build
   displayName: 'Install NPM Packages'
 - script: node .build/package.js
-  workingDirectory: ~/source/
+  workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Build Lab Content'
 - script: zip -r cloud_and_enterprise_symbols-svg *
-  workingDirectory: ~/source/Symbols
+  workingDirectory: $(Build.SourcesDirectory)/Symbols
   displayName: 'Compress SVG Files'
 - script: zip -r cloud_and_enterprise_symbols-png *
-  workingDirectory: ~/source/tmp/png/Symbols
+  workingDirectory: $(Build.SourcesDirectory)/tmp/png/Symbols
   displayName: 'Compress PNG Output Files'
 - script: zip -r cloud_and_enterprise_symbols-jpg *
-  workingDirectory: ~/source/tmp/jpg/Symbols
+  workingDirectory: $(Build.SourcesDirectory)/tmp/jpg/Symbols
   displayName: 'Compress JPG Output Files'
