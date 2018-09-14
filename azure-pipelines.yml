@@ -4,6 +4,5 @@ steps:
 - task: Npm@1
   inputs:
     command: install
-    workingDir: $(Build.SourcesDirectory)/.build
     verbose: true
 - task: gulp@0
