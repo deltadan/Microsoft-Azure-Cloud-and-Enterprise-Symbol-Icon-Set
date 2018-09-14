@@ -1,17 +1,19 @@
 var gulp = require('gulp');
 var svgexport = require('svgexport');
 var fs = require('fs');
+var archiver = require('archiver');
 var glob = require("glob")
 const path = require('path');
 var formats = require('./gulpconfig.json');
-var tempDir = "tmp";
+var imageGenDir = "gen";
+var archiveDir = "zip";
 var symbolsDir = "Symbols";
 gulp.task('default', function() {
-    if (!fs.existsSync(tempDir)) { 
-        fs.mkdirSync(tempDir); 
+    if (!fs.existsSync(imageGenDir)) { 
+        fs.mkdirSync(imageGenDir); 
     }    
     formats.forEach(format => {
-        var formatDir = path.join(tempDir, format.name);
+        var formatDir = path.join(imageGenDir, format.name);
         if (!fs.existsSync(formatDir)) {
             fs.mkdirSync(formatDir);
         }
@@ -37,7 +39,7 @@ function generateImages(imageCategory, imageStyle, folderName, fileExtension, ex
             };
             var fileSuffix = imageStyle == "Color" ? "-color" : "";
             var options = [
-                path.join(tempDir, folderName, imageCategory, fileName + fileSuffix + fileExtension)
+                path.join(imageGenDir, folderName, imageCategory, fileName + fileSuffix + fileExtension)
             ];
             dataParameters.output.push(options.concat(extraOptions));
             conversionData.push(dataParameters);
@@ -46,6 +48,16 @@ function generateImages(imageCategory, imageStyle, folderName, fileExtension, ex
         svgexport.render(conversionData, () => {});
     });
 }
-function createArchive(folderName, archiveName) {
-    // TODO: Implement
+function createArchive(folderName, archiveFileName) {
+    if (!fs.existsSync(archiveDir)) { 
+        fs.mkdirSync(archiveDir); 
+    }    
+    var output = fs.createWriteStream(path.join(archiveDir, archiveFileName));
+    console.log("Creating zip file at: " + output)
+    var archive = archiver('zip', {
+        zlib: { level: 9 }
+    });
+    archive.pipe(output);
+    archive.directory(path.join(imageGenDir, folderName), false);
+    archive.finalize();
 }

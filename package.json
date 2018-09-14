@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "package.js",
   "dependencies": {
+    "archiver": "^3.0.0",
     "glob": "^7.1.2",
     "svgexport": "^0.3.2"
   },

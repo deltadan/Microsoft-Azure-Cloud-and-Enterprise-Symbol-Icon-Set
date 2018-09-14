@@ -4,5 +4,7 @@ steps:
 - task: Npm@1
   inputs:
     command: install
-    verbose: true
 - task: gulp@0
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: /zip
