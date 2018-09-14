@@ -7,4 +7,3 @@ steps:
     workingDir: $(Build.SourcesDirectory)/.build
     verbose: true
 - task: gulp@0
-  inputs:
