@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/seesharprun/Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set/tree/master.svg?style=svg)](https://circleci.com/gh/seesharprun/Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set/tree/master)
+[![Build Status](https://dev.azure.com/seesharprun/Azure%20Symbols/_apis/build/status/seesharprun.Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set)](https://dev.azure.com/seesharprun/Azure%20Symbols/_build/latest?definitionId=18)
 
 # Microsoft Azure Cloud & Enterprise Symbol Set
 
