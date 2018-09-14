@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/seesharprun/Azure%20Symbols/_apis/build/status/seesharprun.Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set)](https://dev.azure.com/seesharprun/Azure%20Symbols/_build/latest?definitionId=18)
+[![Build Status](https://dev.azure.com/seesharprun/Azure%20Symbols/_apis/build/status/seesharprun.Microsoft-Azure-Cloud-and-Enterprise-Symbol-Icon-Set)](https://dev.azure.com/seesharprun/Azure%20Symbols/_build/latest?definitionId=20)
 
 # Microsoft Azure Cloud & Enterprise Symbol Set
 
