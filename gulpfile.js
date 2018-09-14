@@ -17,12 +17,16 @@ gulp.task('default', function() {
         if (!fs.existsSync(formatDir)) {
             fs.mkdirSync(formatDir);
         }
+        var promises = [];
         format.categories.forEach(category => {
             category.styles.forEach(style => {
-                generateImages(category.name, style.name, format.name, format.extension, style.options)
+                var promise = generateImages(category.name, style.name, format.name, format.extension, style.options)
+                promises.push(promise);
             })
         });
-        createArchive(format.name, format.archiveFile);
+        Promise.all(promises).then(() => {
+            createArchive(format.name, format.archiveFile);
+        });        
     });
 });
 function generateImages(imageCategory, imageStyle, folderName, fileExtension, extraOptions) {
@@ -45,7 +49,11 @@ function generateImages(imageCategory, imageStyle, folderName, fileExtension, ex
         conversionData.push(dataParameters);
     });
     console.dir(conversionData, { depth: 5, colors: true });
-    svgexport.render(conversionData, () => {});
+    return new Promise((resolve, reject) => {
+        svgexport.render(conversionData, () => {
+            resolve();
+        });
+    });
 }
 function createArchive(folderName, archiveFileName) {
     if (!fs.existsSync(archiveDir)) { 
