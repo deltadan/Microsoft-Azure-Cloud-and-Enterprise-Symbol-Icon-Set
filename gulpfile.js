@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var svgexport = require('svgexport');
 var fs = require('fs');
 var glob = require("glob")
-var archiver = require('archiver');
 const path = require('path');
 var formats = require('./gulpconfig.json');
 var tempDir = "tmp";
@@ -21,6 +20,7 @@ gulp.task('default', function() {
                 generateImages(category.name, style.name, format.name, format.extension, style.options)
             })
         });
+        createArchive(format.name, format.archiveFile);
     });
 });
 function generateImages(imageCategory, imageStyle, folderName, fileExtension, extraOptions) {
@@ -45,4 +45,7 @@ function generateImages(imageCategory, imageStyle, folderName, fileExtension, ex
         console.dir(conversionData, { depth: 5, colors: true });
         svgexport.render(conversionData, () => {});
     });
+}
+function createArchive(folderName, archiveName) {
+    // TODO: Implement
 }

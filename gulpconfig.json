@@ -1,7 +1,7 @@
 [
     {
         "name": "TRANSPARENT",
-        "compressedFolderName": "cloud_and_enterprise_symbols.zip",
+        "archiveFile": "cloud_and_enterprise_symbols.zip",
         "extension": ".png",
         "categories": [
             {
@@ -39,7 +39,7 @@
     },
     {
         "name": "MONOCHROME",
-        "compressedFolderName": "cloud_and_enterprise_symbols-monochrome.zip",
+        "archiveFile": "cloud_and_enterprise_symbols-monochrome.zip",
         "extension": ".png",
         "categories": [
             {
@@ -71,7 +71,7 @@
     },
     {
         "name": "LARGE",
-        "compressedFolderName": "cloud_and_enterprise_symbols-large.zip",
+        "archiveFile": "cloud_and_enterprise_symbols-large.zip",
         "extension": ".jpg",
         "categories": [
             {
